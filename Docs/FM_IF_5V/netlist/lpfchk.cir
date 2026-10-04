@@ -1,0 +1,31 @@
+* 検波出力段 LPF の周波数特性（DC 動作点を必ず確認すること）
+.model QX NPN(IS=2.64e-14 BF=321 VAF=100 IKF=0.3 ISE=20f NE=1.5 BR=4 VAR=10
++ IKR=0.05 ISC=10f NC=1.5 RE=0.3 RC=0.6 RB=4.5 CJE=9.469p VJE=0.75 MJE=0.33
++ CJC=7.834p VJC=0.75 MJC=0.33 TF=0.409n TR=10n EG=1.11 XTI=3)
+V1 VCC 0 DC 5
+IOB OB 0 DC 1.143m AC 1
+RLB VCC OB 1.5k
+CLB OB 0 {CL}
+RF1 OB LP {RF}
+CF1 LP 0 {CF}
+Q16 VCC LP AFE QX
+RE16 AFE 0 4.7k
+COUT AFE MPX 10u
+RLD MPX 0 47k
+.control
+op
+print v(ob) v(afe)
+ac lin 1 1k 1k
+print vdb(afe)
+ac lin 1 19k 19k
+print vdb(afe)
+ac lin 1 23k 23k
+print vdb(afe)
+ac lin 1 38k 38k
+print vdb(afe)
+ac lin 1 53k 53k
+print vdb(afe)
+ac lin 1 21.4meg 21.4meg
+print vdb(afe)
+.endc
+.end

@@ -1,0 +1,47 @@
+* MPX decoder pilot path (Q1 + 2x MFB BPF) -- AC phase at 19 kHz
+* Usage: edit GBW and RSH, then  ngspice -b pilot_ac.cir
+*   GBW : op-amp gain-bandwidth [Hz]   (NJM2747 = 10MEG, TSV794 = 50MEG)
+*   RSH : R21/R27 (MFB shunt).  47 = original, 45.5 = 47 || 1.5k (measured)
+* (ngspice prints phase wrapped to +-180: +148.2 = -211.8 deg)
+* Expected: GBW=10MEG RSH=47   -> 8.44x, -211.8 deg, peak 18.70 kHz
+*           GBW=10MEG RSH=45.5 -> 9.14x, -180.2 deg, peak 19.03 kHz
+*           ideal op-amp       -> 9.18x, -177.6 deg, peak 19.03 kHz
+.param GBW=10MEG RSH=47
+VCC vcc 0 5
+VREF ref 0 2.5
+VIN in 0 DC 0 AC 1
+C2 in b 1u
+R6 c b 470k
+R9 vcc c 4.7k
+R10 e 0 470
+Q1 c b e Q2N3904
+C9 c n9 0.1u
+R20 n9 n11 2.4k
+R21 n11 0 {RSH}
+C12 n11 inv1 0.01u
+C11 n11 out1 0.01u
+R25 inv1 out1 15k
+XA ref inv1 out1 OPA
+R26 out1 n14 7.5k
+R27 n14 0 {RSH}
+C15 n14 inv2 0.01u
+C14 n14 out2 0.01u
+R29 inv2 out2 15k
+XB ref inv2 out2 OPA
+* single-pole op-amp: A0 = 1e5, pole = GBW/A0
+.subckt OPA p m out
+E1 n1 0 p m 1e5
+R1 n1 n2 1k
+C1 n2 0 {1/(6.2831853*1k*GBW/1e5)}
+E2 out p n2 0 1
+.ends
+.model Q2N3904 NPN(IS=6.734f BF=200 VAF=74.03 IKF=.06678 ISE=6.734f NE=1.259 BR=.7371 VAR=28 IKR=.2847 ISC=6.734f NC=2 RB=10 RE=0 RC=1 CJE=4.493p MJE=.2593 CJC=3.638p MJC=.3085 TF=301.2p TR=239.5n XTB=1.5)
+.control
+ac lin 1 19000 19000
+let ph=180/pi*cph(v(out2))
+print mag(v(out2)) ph
+ac dec 400 15k 24k
+let g=mag(v(out2))
+meas ac fpk MAX_AT g from=15k to=24k
+.endc
+.end

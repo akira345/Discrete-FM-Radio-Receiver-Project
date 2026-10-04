@@ -1,0 +1,146 @@
+* =====================================================================
+*  FM IF STRIP  rev.D (as-built)  : 4段差動リミッタ ＋ ギルバート型クワドラチャ検波
+*  5V / 10.7MHz    LTspice（ネットリスト読み込み）/ ngspice 両対応
+*
+*  rev.D = 実機と一致させた版。rev.C からの変更点:
+*    (1) 出力は OB から取る（基板の裏ジャンパがそうなっている）→ RF1 OB LP 1k
+*        ※ S カーブの極性が rev.C と逆（周波数上昇で出力上昇）になる
+*    (2) JFET モデルを実測 SF=0.662V から逆算した値に差し替え
+*        VTO=-0.771 BETA=25.2m （IDSS≒15mA、データシートの 10〜20mA に整合）
+*    (3) CP 97.7p → 100p（実装値）
+*    (4) 4段目出力に終端 CR（1000p + 1k）を追加
+*
+*  ---- 実機実測値（この値と照合すること）----
+*  リミッタ DC : VCC 5.00 / VK 4.65 / VB 2.12
+*                BA,BB 全8点 1.983〜1.997 / 共通エミッタ 1.28 / 総電流 35mA
+*  リミッタ AC : 段利得 15.1/18.0/17.0/20.2 dB  合計 70.4 dB @10.7MHz
+*                帯域外ピークは 2.61MHz の 75.9dB（ここで発振する）
+*  キャプチャ閾値 : 0.26〜0.52 mVrms（中央値 0.37）
+*  検波 DC     : VBU 2.357 / VBL 1.585 / BU 2.352 / BL 1.533
+*                ET 0.891 / CL 1.736,1.737 / OA,OB 3.422,3.276
+*                QD 0 / SF 0.662 / AFE 2.660（無信号）
+*  検波 AC     : 駆動 3Vpp差動で SF(RQ1左) 317mVpp / BL1 213mVpp / AFE 2.760
+*  S カーブ    : 感度 5.375 mV/kHz / ±75kHz で 796mVpp / 直線性 1.0%
+*                中心 10.7011 MHz
+*  IFT         : 18T を L メータで 2.21uH に調整（次回は 17T 推奨）
+*  RLP 1.86ohm はコイルの無負荷 Qu=80 相当。実測 Q で置き換えること
+* =====================================================================
+* ---- 実測フィット済みトランジスタモデル (MMBT3904, 5V/4mA で検証) ----
+.model QX NPN(IS=2.64e-14 BF=321 VAF=100 IKF=0.3 ISE=20f NE=1.5 BR=4 VAR=10
++ IKR=0.05 ISC=10f NC=1.5 RE=0.3 RC=0.6 RB=4.5 CJE=9.469p VJE=0.75 MJE=0.33
++ CJC=7.834p VJC=0.75 MJC=0.33 TF=0.409n TR=10n EG=1.11 XTI=3)
+
+* =====================  電源とバイアス  =====================
+V1   VCC 0    DC 5
+RS   VCC VK   10
+CS   VK  0    10u
+
+* --- リミッタ用ベースバイアス VB = 2.0V (TA7061 方式のEF) ---
+RD1  VCC BREF 8.2k
+RD2  BREF 0   10k
+CD   BREF 0   0.1u
+Q9   VCC BREF VB  QX
+RB9  VB  0    4.7k
+CB   VB  0    0.1u
+
+* --- 検波器用バイアス VBU = 2.38V (上段) / VBL = 1.60V (下段) ---
+RU1  VCC VBU  10k
+RU2  VBU 0    9.1k
+CU   VBU 0    0.1u
+RV1  VCC VBL  10k
+RV2  VBL 0    4.7k
+CV   VBL 0    0.1u
+
+* =====================  入力  =====================
+* フロントエンド出力 10mVrms = 14.1mVpk、FM変調 (Fsig=10kHz, Δf=±75kHz)
+VIN  SRC 0 DC 0 SFFM(0 14.1m 10.7Meg 7.5 10k)
+* 無変調で見たいとき:  VIN SRC 0 DC 0 SIN(0 14.1m 10.7Meg)
+* 1kHz変調にするとき:  SFFM(0 14.1m 10.7Meg 75 1k)  ※ .tran を 3ms まで伸ばす
+RSRC SRC FOUT 330
+RTRM FOUT 0   330
+* ※ セラミックフィルタ SFELF10M7GA00 は上の 330Ω-330Ω で代用（通過帯域は無視）
+
+* =====================  差動リミッタ 4段  =====================
+.subckt LIMST INA INB OUTA OUTB VB VK PARAMS: LP=6.8u
+CIA  INA  BA   100p
+RGA  BA   VB   10k
+RBA  BA   GA   47
+QA   OUTA GA   E    QX
+CIB  INB  BB   100p
+RGB  BB   VB   10k
+RBB  BB   GB   47
+QB   OUTB GB   E    QX
+RT   E    0    150
+LA   OUTA NA   {LP}
+RCA  NA   VK   330
+LB   OUTB NB   {LP}
+RCB  NB   VK   330
+.ends
+
+X1 FOUT 0   O1A O1B VB VK LIMST
+X2 O1A  O1B O2A O2B VB VK LIMST
+X3 O2A  O2B O3A O3B VB VK LIMST PARAMS: LP=1n
+X4 O3A  O3B O4A O4B VB VK LIMST PARAMS: LP=1n
+* 1段ごとに反転するが4段＝偶数なので入出力は同相に戻る
+* --- 4段目出力の終端（実機で追加。検波基板を外して測るときに必要）---
+CT4A O4A T4A 1000p
+RT4A T4A 0   1k
+CT4B O4B T4B 1000p
+RT4B T4B 0   1k
+
+* =====================  移相回路（自作IFTタンク）  =====================
+CC   O4A QD  1p
+LP   QD  LPX 2.213u
+RLP  LPX 0   1.86
+CP   QD  0   100p
+RP   QD  0   4.7k
+* --- 2SK3557 ソースフォロア ---
+.model JF NJF(VTO=-0.771 BETA=25.2m LAMBDA=2m RD=5 RS=5 CGS=4p CGD=2p)
+J17  VCC QD  SF  JF
+RSF  SF  0   2.2k
+
+* =====================  ギルバート型位相検波器  =====================
+* 上段：リミッタ出力を 1/6.6 に分圧して 500mVpp 差動で駆動
+CUA  O4A UA1 1000p
+RUA1 UA1 BU1 5.6k
+RUA2 BU1 VBU 1k
+CUB  O4B UB1 1000p
+RUB1 UB1 BU2 5.6k
+RUB2 BU2 VBU 1k
+* 下段：ソースフォロア出力でシングルエンド駆動（BL2 は交流接地）
+CQ   SF  QA1 1000p
+RQ1  QA1 BL1 470
+RQ2  BL1 VBL 10k
+RQ3  BL2 VBL 10k
+CG2  BL2 0   1000p
+* 下段差動対
+QL1  CL1 BL1 ET  QX
+QL2  CL2 BL2 ET  QX
+RTG  ET  0   390
+* 上段クアッド
+QU1  OA  BU1 CL1 QX
+QU2  OB  BU2 CL1 QX
+QU3  OB  BU1 CL2 QX
+QU4  OA  BU2 CL2 QX
+RLA  VCC OA  1.5k
+RLB  VCC OB  1.5k
+CLA  OA  0   1000p
+CLB  OB  0   1000p
+
+* =====================  検波後 CR LPF ＋ 出力バッファ  =====================
+* fc1 = 1.5k//1000p = 106kHz,  fc2 = 1k+1000p = 159kHz
+* 19k/38k を通すので、ここではデエンファシスも15kHz LPFも入れない
+RF1  OB  LP  1k
+CF1  LP  0   1000p
+Q16  VCC LP  AFE QX
+RE16 AFE 0   4.7k
+COUT AFE MPX 10u
+RLD  MPX 0   10k
+* MPX → 74HC4046 ステレオデコーダへ
+
+* =====================  解析  =====================
+.op
+* .tran 2n 300u 100u 2n
+* .op
+* .ac dec 100 1meg 100meg      ← 小信号利得を見るとき（VIN を AC 1 にする）
+.end

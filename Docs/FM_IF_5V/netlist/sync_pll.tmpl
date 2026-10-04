@@ -1,0 +1,57 @@
+* Synchronous-detector PLL for MPX decoder (behavioural VCO + dividers)
+* composite -> +-1 multiplier (U2A, U8A) -> PI loop filter (U2B) -> VCO
+* stereo detect: switched-RC pair on I and /I (U8B, U8C) -> SA / SB
+* Designators here -> figure: R1=R60 R2=R61 R3=R62 R4=R63 R5=R64 C5=C40 C6=C41 RL=R65
+*                          S1=U8A S2=U8B S3=U8C R6=R66 R7=R67 C7=C42 C8=C43
+* (stereo RC simulated as 100k/0.1u; figure uses 10k/1u = same time constant)
+* VCO: Kv = 30 kHz/V at 76 kHz (ASSUMED - measure on the real board)
+.param A={AMP} PIL={PILOT} DF={DFREQ} VOSA={VOS} VOSB={VOSB}
+.param KV19={6.2831853*7500} W0={6.2831853*19000*(1+DF)}
+VCC vcc 0 5
+VREF ref 0 2.5
+* composite at U2C output (L only, 1 kHz), biased 2.5 V + small bias error
+B1 comp 0 V = 2.5 + {VBERR} + {A}/0.9649*(0.45*sin(6283.185*time)*(1 + sin(238761.04*time)) + {PIL}*sin(119380.52*time))
+* ---- VCO / divider model: th = phase of 19 kHz divider output I ----
+* th is integrated RELATIVE to the pilot (keeps the state small -> accurate)
+Cph ph 0 1 IC={PH0}
+Bph 0 ph I = {W0} - 119380.52 + {KV19}*(V(vctl)-2.5)
+Bth th 0 V = 119380.52*time + V(ph)
+BI  qi 0 V = 2.5 + 2.5*tanh(40*sin(V(th)))       ; I  : U5A Q (pin5)
+BQ  qq 0 V = 2.5 + 2.5*tanh(-40*cos(V(th)))      ; Q  : new FF, 90 deg late
+BIN qin 0 V = 5 - V(qi)                            ; /I
+B38 q38 0 V = 2.5 + 2.5*tanh(40*sin(2*V(th)))    ; 38KHz-PLL
+* ---- phase detector: +-1 multiplier (U2A) + switch U8A ----
+R1 comp p1 10k
+S1 p1 ref qq 0 SWM
+R2 comp m1 10k
+R3 m1 pd 10k
+XA p1 m1 pd OPA VOS={VOSA}
+* ---- PI loop filter (U2B) ----
+R4 pd m2 {RI}
+R5 m2 f1 {RZ}
+C5 f1 vctl {CI}
+C6 m2 vctl {CP}
+RL m2 vctl {RL}
+XB ref m2 vctl OPA VOS={VOSB}
+* ---- stereo detect: switched RC on I and /I ----
+S2 comp sa1 qi 0 SWM
+R6 sa1 sa 100k
+C7 sa 0 0.1u
+S3 comp sb1 qin 0 SWM
+R7 sb1 sb 100k
+C8 sb 0 0.1u
+.model SWM SW(Ron=150 Roff=1e9 Vt=2.5 Vh=0.05)
+* single-pole op-amp: GBW 10 MHz, slew rate SR (V/s), output 0.05..4.95 V
+.subckt OPA p m out VOS=0
+Vos p pp {VOS}
+B1 n1 0 V = max(-{SR}*1.59155e-3, min({SR}*1.59155e-3, 1e5*(V(pp)-V(m))))
+R1 n1 n2 1k
+C1 n2 0 {1/(6.2831853*1k*100)}
+B2 out 0 V = max(0.05, min(4.95, V(pp)+V(n2)))
+.ends
+.options method=gear reltol=1e-4
+.control
+tran 0.5u {TSTOP} 0 0.5u uic
+wrdata {TAG}.dat V(ph) V(vctl) V(sa) V(sb) V(pd)
+.endc
+.end

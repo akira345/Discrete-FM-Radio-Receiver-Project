@@ -1,0 +1,32 @@
+* 1段目の入力インピーダンス（小信号）
+.model QX NPN(IS=2.64e-14 BF=321 VAF=100 IKF=0.3 ISE=20f NE=1.5 BR=4 VAR=10
++ IKR=0.05 ISC=10f NC=1.5 RE=0.3 RC=0.6 RB=4.5 CJE=9.469p VJE=0.75 MJE=0.33
++ CJC=7.834p VJC=0.75 MJC=0.33 TF=0.409n TR=10n EG=1.11 XTI=3)
+V1 VCC 0 DC 5
+RS VCC VK 10
+CS VK 0 10u
+RD1 VCC BREF 8.2k
+RD2 BREF 0 10k
+CD BREF 0 0.1u
+Q9 VCC BREF VB QX
+RB9 VB 0 4.7k
+CB VB 0 0.1u
+* 差動対（片側にAC電流を注入）
+IIN 0 GA AC 1
+RGA BA VB 10k
+RBA BA GA 47
+QA OUTA GA E QX
+RGB BB VB 10k
+RBB BB GB 47
+QB OUTB GB E QX
+CIB BB 0 100p
+RT E 0 150
+RCA OUTA VK 330
+RCB OUTB VK 330
+.ac lin 1 10.7meg 10.7meg
+.control
+run
+let zb = v(GA)
+print mag(zb) ph(zb)*180/pi
+.endc
+.end

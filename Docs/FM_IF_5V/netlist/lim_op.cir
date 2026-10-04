@@ -1,0 +1,47 @@
+* limiter only (detector not built yet) - operating point
+.model QX NPN(IS=2.64e-14 BF=321 VAF=100 IKF=0.3 ISE=20f NE=1.5 BR=4 VAR=10
++ IKR=0.05 ISC=10f NC=1.5 RE=0.3 RC=0.6 RB=4.5 CJE=9.469p VJE=0.75 MJE=0.33
++ CJC=7.834p VJC=0.75 MJC=0.33 TF=0.409n TR=10n EG=1.11 XTI=3)
+V1   VCC 0    DC 5
+RS   VCC VK   10
+CS   VK  0    10u
+RD1  VCC BREF 8.2k
+RD2  BREF 0   10k
+CD   BREF 0   0.1u
+Q9   VCC BREF VB  QX
+RB9  VB  0    4.7k
+CB   VB  0    0.1u
+VIN  SRC 0 DC 0 AC 1
+RSRC SRC FOUT 330
+RTRM FOUT 0   330
+.subckt LIMST INA INB OUTA OUTB VB VK PARAMS: LP=6.8u
+CIA  INA  BA   100p
+RGA  BA   VB   10k
+RBA  BA   GA   47
+QA   OUTA GA   E    QX
+CIB  INB  BB   100p
+RGB  BB   VB   10k
+RBB  BB   GB   47
+QB   OUTB GB   E    QX
+RT   E    0    150
+LA   OUTA NA   {LP}
+RCA  NA   VK   330
+LB   OUTB NB   {LP}
+RCB  NB   VK   330
+.ends
+X1 FOUT 0   O1A O1B VB VK LIMST
+X2 O1A  O1B O2A O2B VB VK LIMST
+X3 O2A  O2B O3A O3B VB VK LIMST PARAMS: LP=1n
+X4 O3A  O3B O4A O4B VB VK LIMST PARAMS: LP=1n
+.control
+set noaskquit
+op
+print v(vcc) v(vk) v(bref) v(vb)
+print v(x1.ba) v(x1.ga) v(x1.e) v(o1a) v(o1b)
+print v(x2.ba) v(x2.ga) v(x2.e) v(o2a) v(o2b)
+print v(x3.ba) v(x3.ga) v(x3.e) v(o3a) v(o3b)
+print v(x4.ba) v(x4.ga) v(x4.e) v(o4a) v(o4b)
+print -i(v1)
+print @q9[ic] @q9[ie]
+.endc
+.end
