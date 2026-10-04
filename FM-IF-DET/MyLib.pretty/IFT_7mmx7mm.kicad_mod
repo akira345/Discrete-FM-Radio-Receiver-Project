@@ -1,0 +1,117 @@
+(footprint "IFT_7mmx7mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Footprint for 7x7mm IFT, 5 pins, φ0.3mm leads, center 5mm bobbin")
+	(tags "IFT transformer 7mm")
+	(property "Reference" "REF**"
+		(at 0 -4.5 0)
+		(layer "F.SilkS")
+		(uuid "1a7998ad-6e51-43ed-bffa-623b71bdf249")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "IFT_7mm"
+		(at 0 4.5 0)
+		(layer "F.Fab")
+		(uuid "572bdcae-0647-483a-8547-af9ddd998ec4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "10d7abc6-2572-4e52-aa9e-9a042c850fe6")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "faceb26a-b0cb-4e02-8542-f4523f057e7c")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -3.5 -3.5)
+		(end 3.5 3.5)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "c7897fa5-6b92-4cdf-a225-453c1e9b138e")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 2.5 0)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "98c99326-9de6-4bec-86d3-d99990c434a1")
+	)
+	(pad "1" thru_hole circle
+		(at -2.5 -2.5)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6736312a-38cf-449c-a1c9-ba7d9dfe2c15")
+	)
+	(pad "2" thru_hole circle
+		(at -2.5 2.5)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6828b580-b540-44c3-a018-a8b4b9a366c2")
+	)
+	(pad "3" thru_hole circle
+		(at 2.5 -2.5)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "eb8f3472-fb7e-4d0a-a2f7-fe9a08a8b9ae")
+	)
+	(pad "4" thru_hole circle
+		(at 2.5 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "41fd8453-0108-4e70-a652-987b79d3523c")
+	)
+	(pad "5" thru_hole circle
+		(at 2.5 2.5)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ab849b38-2684-49e3-9481-a0cbf8ec2462")
+	)
+	(embedded_fonts no)
+)
