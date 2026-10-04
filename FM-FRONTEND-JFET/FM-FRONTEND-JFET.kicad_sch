@@ -2405,6 +2405,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "受信周波数：76-95MHz\nバリコン：10p-30p\nL1: 0.6mmを内径5mmで4ターン長さ3.3mm\nL2: 0.6mmを内径5mmで3ターン長さ2.3mm\n\nT1\n27T:9T"
+		(exclude_from_sim no)
+		(at 35.56 87.884 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a41ae06b-26c7-4750-aba8-14fcd603e3b1")
+	)
 	(junction
 		(at 64.77 114.3)
 		(diameter 0)
@@ -6322,7 +6332,7 @@
 				)
 			)
 		)
-		(property "Value" "FerriteBead_Small"
+		(property "Value" "MPZ1608S601ATA00"
 			(at 46.9519 22.86 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7199,7 +7209,7 @@
 				)
 			)
 		)
-		(property "Value" "FerriteBead_Small"
+		(property "Value" "MPZ1608S601ATA00"
 			(at 69.8119 91.44 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8345,7 +8355,7 @@
 				)
 			)
 		)
-		(property "Value" "FerriteBead_Small"
+		(property "Value" "MPZ1608S601ATA00"
 			(at 110.4519 22.86 90)
 			(show_name no)
 			(do_not_autoplace no)
