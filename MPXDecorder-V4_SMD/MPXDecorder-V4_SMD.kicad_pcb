@@ -23990,7 +23990,7 @@
 			(justify bottom)
 		)
 	)
-	(gr_text "FM-MPX Decorder テストボード Ver.4.0\n2026/10/XX Akira345"
+	(gr_text "FM-MPX Decorder テストボード Ver.4.0\n2026/10/10 Akira345"
 		(at 107.0864 98.298 90)
 		(layer "F.SilkS")
 		(uuid "c814e250-b9ce-485d-8fe5-1063d5b3802e")
