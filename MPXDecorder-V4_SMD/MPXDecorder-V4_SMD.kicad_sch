@@ -4561,6 +4561,12 @@
 		(uuid "33cac75f-2294-450f-8b86-8d6c47c7f7dd")
 	)
 	(junction
+		(at 156.21 254)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "37a8d6a2-6bab-41cd-8f73-62059a8df55c")
+	)
+	(junction
 		(at 139.7 217.17)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4799,6 +4805,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "834aa910-3b61-4af5-9e04-c93d1d556cf5")
+	)
+	(junction
+		(at 156.21 261.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "86ab5e50-2603-40cb-a0ce-9d44d87403f8")
 	)
 	(junction
 		(at 104.14 165.1)
@@ -5340,6 +5352,16 @@
 	)
 	(wire
 		(pts
+			(xy 156.21 246.38) (xy 156.21 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0fc004ba-f12e-4b90-9c4b-5f677e5e7ff1")
+	)
+	(wire
+		(pts
 			(xy 176.53 66.04) (xy 179.07 66.04)
 		)
 		(stroke
@@ -5650,7 +5672,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 245.11) (xy 187.96 242.57)
+			(xy 187.96 233.68) (xy 187.96 245.11)
 		)
 		(stroke
 			(width 0)
@@ -5770,6 +5792,16 @@
 	)
 	(wire
 		(pts
+			(xy 161.29 261.62) (xy 156.21 261.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2547535f-ccf1-45a2-9918-96a7f3a591a4")
+	)
+	(wire
+		(pts
 			(xy 231.14 91.44) (xy 265.43 91.44)
 		)
 		(stroke
@@ -5837,6 +5869,16 @@
 			(type default)
 		)
 		(uuid "2aa3b1b3-bb6c-41d6-a22b-f81bf9eae15d")
+	)
+	(wire
+		(pts
+			(xy 156.21 261.62) (xy 156.21 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2af9cfba-d309-44cf-86c2-7cb596c6a928")
 	)
 	(wire
 		(pts
@@ -6480,16 +6522,6 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 254) (xy 175.26 254)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "558cd5fa-104a-4b08-bab5-a6bad32594d8")
-	)
-	(wire
-		(pts
 			(xy 160.02 33.02) (xy 160.02 40.64)
 		)
 		(stroke
@@ -6507,16 +6539,6 @@
 			(type default)
 		)
 		(uuid "56ea53ba-6532-49c7-9066-6a311aea0002")
-	)
-	(wire
-		(pts
-			(xy 187.96 242.57) (xy 182.88 242.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5729a7f7-c6e5-4d80-bf61-f2e75190fefa")
 	)
 	(wire
 		(pts
@@ -7337,16 +7359,6 @@
 			(type default)
 		)
 		(uuid "864682ad-7846-46fe-aae4-a5cc4062dcb5")
-	)
-	(wire
-		(pts
-			(xy 175.26 247.65) (xy 175.26 254)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "86cbad13-6fe7-436b-bfa8-3bc9792eeff7")
 	)
 	(wire
 		(pts
@@ -8180,6 +8192,16 @@
 	)
 	(wire
 		(pts
+			(xy 156.21 261.62) (xy 156.21 265.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2ecd757-5acf-4e37-bfaa-2f0a50f34946")
+	)
+	(wire
+		(pts
 			(xy 43.18 140.97) (xy 43.18 144.78)
 		)
 		(stroke
@@ -8427,16 +8449,6 @@
 			(type default)
 		)
 		(uuid "be831af5-6a73-435c-aa9b-1905e84b6b8f")
-	)
-	(wire
-		(pts
-			(xy 162.56 214.63) (xy 162.56 254)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "beede8dc-b722-47b6-a7f0-55bf92cc1313")
 	)
 	(wire
 		(pts
@@ -9200,6 +9212,16 @@
 	)
 	(wire
 		(pts
+			(xy 161.29 246.38) (xy 156.21 246.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4f9824d-c3ca-4cf8-8f6b-6ecafac38f52")
+	)
+	(wire
+		(pts
 			(xy 52.07 36.83) (xy 52.07 41.91)
 		)
 		(stroke
@@ -9357,16 +9379,6 @@
 			(type default)
 		)
 		(uuid "f1020981-3b6d-45c7-bce8-6688bb539b56")
-	)
-	(wire
-		(pts
-			(xy 167.64 233.68) (xy 167.64 242.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f21385d3-449e-4719-ab3a-5a0f93167877")
 	)
 	(wire
 		(pts
@@ -9647,6 +9659,16 @@
 			(justify left bottom)
 		)
 		(uuid "118dacc8-9359-43fd-88b2-89a921e7d55c")
+	)
+	(label "MONO"
+		(at 187.96 267.97 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1631b7b5-9a22-4426-a7bd-29d4fab7e08c")
 	)
 	(label "OUT-L"
 		(at 322.58 160.02 0)
@@ -10246,7 +10268,7 @@
 	(symbol
 		(lib_id "74xx:74HC74")
 		(at 116.84 172.72 0)
-		(unit 1)
+		(unit 2)
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10355,7 +10377,7 @@
 			(project "MPXDecorder-V4_SMD"
 				(path "/88611961-9974-4de6-9010-330f0c036af9"
 					(reference "U9")
-					(unit 1)
+					(unit 2)
 				)
 			)
 		)
@@ -11199,7 +11221,7 @@
 	(symbol
 		(lib_id "74xx:74HC74")
 		(at 48.26 199.39 0)
-		(unit 2)
+		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11309,7 +11331,7 @@
 			(project "MPXDecorder-V4_SMD"
 				(path "/88611961-9974-4de6-9010-330f0c036af9"
 					(reference "U9")
-					(unit 2)
+					(unit 1)
 				)
 			)
 		)
@@ -11409,7 +11431,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 167.64 233.68 0)
+		(at 187.96 233.68 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11420,7 +11442,7 @@
 		(fields_autoplaced yes)
 		(uuid "10950483-9f39-43ee-bef1-e99b504b1467")
 		(property "Reference" "#PWR028"
-			(at 167.64 237.49 0)
+			(at 187.96 237.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11431,7 +11453,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 167.64 228.6 0)
+			(at 187.96 228.6 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11441,7 +11463,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 167.64 233.68 0)
+			(at 187.96 233.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11452,7 +11474,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 167.64 233.68 0)
+			(at 187.96 233.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11463,7 +11485,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 167.64 233.68 0)
+			(at 187.96 233.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13187,7 +13209,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/cd4066b.pdf"
 			(at 217.17 223.52 0)
 			(hide yes)
 			(show_name no)
@@ -13198,7 +13220,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Quad 20V analog SPST 1:1 switch, DIP-14"
 			(at 217.17 223.52 0)
 			(hide yes)
 			(show_name no)
@@ -13512,7 +13534,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "314082a5-cf08-4967-99d9-60c8fe3ff02d")
-		(property "Reference" "U8"
+		(property "Reference" "U1"
 			(at 96.52 189.23 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13610,7 +13632,7 @@
 		(instances
 			(project "MPXDecorder-V4_SMD"
 				(path "/88611961-9974-4de6-9010-330f0c036af9"
-					(reference "U8")
+					(reference "U1")
 					(unit 2)
 				)
 			)
@@ -14933,7 +14955,7 @@
 	(symbol
 		(lib_id "Analog_Switch:CD4066BE")
 		(at 139.7 27.94 0)
-		(unit 4)
+		(unit 2)
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15042,7 +15064,7 @@
 			(project "MPXDecorder-V4_SMD"
 				(path "/88611961-9974-4de6-9010-330f0c036af9"
 					(reference "U8")
-					(unit 4)
+					(unit 2)
 				)
 			)
 		)
@@ -15371,7 +15393,7 @@
 	(symbol
 		(lib_id "Analog_Switch:CD4066BE")
 		(at 101.6 80.01 270)
-		(unit 1)
+		(unit 3)
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15481,7 +15503,7 @@
 			(project "MPXDecorder-V4_SMD"
 				(path "/88611961-9974-4de6-9010-330f0c036af9"
 					(reference "U8")
-					(unit 1)
+					(unit 3)
 				)
 			)
 		)
@@ -17235,7 +17257,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/cd4066b.pdf"
 			(at 223.52 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -17246,7 +17268,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Quad 20V analog SPST 1:1 switch, DIP-14"
 			(at 223.52 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -17351,7 +17373,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/cd4066b.pdf"
 			(at 223.52 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -17362,7 +17384,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Quad 20V analog SPST 1:1 switch, DIP-14"
 			(at 223.52 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -17739,84 +17761,6 @@
 			(project "MPXDecorder-V4_SMD"
 				(path "/88611961-9974-4de6-9010-330f0c036af9"
 					(reference "#PWR033")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 187.96 267.97 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "64bbf63b-9f93-40aa-a64f-104207348c8d")
-		(property "Reference" "#PWR032"
-			(at 187.96 274.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 187.96 273.05 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 187.96 267.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 187.96 267.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 187.96 267.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "84f90afb-65f6-426b-8a13-c98090d6f544")
-		)
-		(instances
-			(project "MPXDecorder-V4_SMD"
-				(path "/88611961-9974-4de6-9010-330f0c036af9"
-					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -18957,7 +18901,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7584fe02-b246-4ab5-b4b9-4f311cccb5f3")
-		(property "Reference" "U8"
+		(property "Reference" "U1"
 			(at 96.52 213.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19055,7 +18999,7 @@
 		(instances
 			(project "MPXDecorder-V4_SMD"
 				(path "/88611961-9974-4de6-9010-330f0c036af9"
-					(reference "U8")
+					(reference "U1")
 					(unit 3)
 				)
 			)
@@ -20335,124 +20279,8 @@
 	)
 	(symbol
 		(lib_id "Analog_Switch:CD4066BE")
-		(at 175.26 242.57 0)
-		(unit 2)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8960b453-d3cf-4b0e-aa4d-28e1a1df18b4")
-		(property "Reference" "U1"
-			(at 175.26 234.95 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TC4066BFELNF"
-			(at 175.26 237.49 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_SO:SO-14_5.3x10.2mm_P1.27mm"
-			(at 175.26 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 175.26 242.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 175.26 242.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "346cfe53-f798-49fd-90fe-5647128138af")
-		)
-		(pin "6"
-			(uuid "c7655573-15cd-4897-b7b0-7d5f6c73019e")
-		)
-		(pin "8"
-			(uuid "2dd1029b-2aa6-48e3-96ac-e0ef0548cf6b")
-		)
-		(pin "9"
-			(uuid "61a48878-8a22-471f-a37d-2a15cc1c81d8")
-		)
-		(pin "7"
-			(uuid "cc792e74-14a0-41bb-a192-1c9720d1e1d4")
-		)
-		(pin "13"
-			(uuid "451e25e5-c216-4641-8076-226759ebcbd7")
-		)
-		(pin "14"
-			(uuid "cc737358-8e15-4753-84d6-d1e357a0dcae")
-		)
-		(pin "11"
-			(uuid "4a07f4da-0352-4cdb-8d85-cb321d6e633a")
-		)
-		(pin "10"
-			(uuid "0d0fce89-86b0-474b-8f8f-f8c7ad748dcb")
-		)
-		(pin "2"
-			(uuid "271535ea-4d66-4c1e-9ecb-eedc113fc3aa")
-		)
-		(pin "4"
-			(uuid "c3fa2ecf-f88b-46f1-9fc4-caacd2a8af7a")
-		)
-		(pin "5"
-			(uuid "939646fe-4621-435d-bee2-ae9d78f41b53")
-		)
-		(pin "3"
-			(uuid "270331e0-7f5d-4ff6-bddb-88cd18114a18")
-		)
-		(pin "12"
-			(uuid "88268ce6-a14a-4758-82c4-b1d3580eb200")
-		)
-		(instances
-			(project "MPXDecorder-V4_SMD"
-				(path "/88611961-9974-4de6-9010-330f0c036af9"
-					(reference "U1")
-					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Analog_Switch:CD4066BE")
 		(at 160.02 27.94 0)
-		(unit 3)
+		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20461,7 +20289,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8960b453-d3cf-4b0e-aa4d-28e1a1df18b5")
-		(property "Reference" "U1"
+		(property "Reference" "U8"
 			(at 160.02 20.32 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20492,7 +20320,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/cd4066b.pdf"
 			(at 160.02 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -20503,7 +20331,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Quad 20V analog SPST 1:1 switch, DIP-14"
 			(at 160.02 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -20559,8 +20387,8 @@
 		(instances
 			(project "MPXDecorder-V4_SMD"
 				(path "/88611961-9974-4de6-9010-330f0c036af9"
-					(reference "U1")
-					(unit 3)
+					(reference "U8")
+					(unit 1)
 				)
 			)
 		)
@@ -26340,7 +26168,7 @@
 		(lib_id "Amplifier_Operational:Opamp_Quad")
 		(at 165.1 66.04 0)
 		(mirror x)
-		(unit 2)
+		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -26495,7 +26323,7 @@
 			(project "MPXDecorder-V4_SMD"
 				(path "/88611961-9974-4de6-9010-330f0c036af9"
 					(reference "U2")
-					(unit 2)
+					(unit 1)
 				)
 			)
 		)
@@ -26504,7 +26332,7 @@
 		(lib_id "Amplifier_Operational:Opamp_Quad")
 		(at 111.76 63.5 0)
 		(mirror x)
-		(unit 1)
+		(unit 2)
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -26659,7 +26487,7 @@
 			(project "MPXDecorder-V4_SMD"
 				(path "/88611961-9974-4de6-9010-330f0c036af9"
 					(reference "U2")
-					(unit 1)
+					(unit 2)
 				)
 			)
 		)
@@ -28340,6 +28168,202 @@
 				(path "/88611961-9974-4de6-9010-330f0c036af9"
 					(reference "R55")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 156.21 265.43 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f8dc59cf-7a47-4a65-a447-ebc900ce6763")
+		(property "Reference" "#PWR019"
+			(at 156.21 271.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 156.21 270.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 156.21 265.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 156.21 265.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 156.21 265.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "00b1c96d-f9f3-4908-bb90-f2d046964805")
+		)
+		(instances
+			(project "MPXDecorder-V4_SMD"
+				(path "/88611961-9974-4de6-9010-330f0c036af9"
+					(reference "#PWR019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Analog_Switch:CD4066BE")
+		(at 161.29 254 270)
+		(unit 4)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f90814bc-ef0d-4ba7-85b8-dcabf9d470f7")
+		(property "Reference" "U8"
+			(at 165.1 252.7299 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TC4066BFELNF"
+			(at 165.1 255.2699 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:SO-14_5.3x10.2mm_P1.27mm"
+			(at 158.75 254 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/cd4066b.pdf"
+			(at 161.29 254 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Quad 20V analog SPST 1:1 switch, DIP-14"
+			(at 161.29 254 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "12"
+			(uuid "02db52fe-bcf5-4861-82ea-9e7dfe3286b1")
+		)
+		(pin "8"
+			(uuid "8fb8914b-2a5c-4259-a433-f6c89a52d2d7")
+		)
+		(pin "10"
+			(uuid "d4ff3308-4d90-4da2-adc5-88bd04d0f115")
+		)
+		(pin "11"
+			(uuid "e21cfff6-a2f3-4910-9fe4-2cd57cdf3c7d")
+		)
+		(pin "9"
+			(uuid "fbc1b380-790c-4fb5-9371-84b9b23d5b5a")
+		)
+		(pin "7"
+			(uuid "fa4a09f7-6678-4651-a935-03bf2c3df6b9")
+		)
+		(pin "14"
+			(uuid "3d94e8b2-6035-42c8-b4be-36a703c71945")
+		)
+		(pin "13"
+			(uuid "5b163c49-377b-4c5a-9bb7-4320e2d21d97")
+		)
+		(pin "1"
+			(uuid "7403cc5d-c628-494f-8c81-524a8110b9e0")
+		)
+		(pin "4"
+			(uuid "90372933-9001-4815-aef4-0f0592aaba1b")
+		)
+		(pin "5"
+			(uuid "dffab78e-4e6e-4c4b-badd-18b8c8aba3a0")
+		)
+		(pin "2"
+			(uuid "9db48eab-e8ed-4443-b798-6c7c9fa0da8f")
+		)
+		(pin "3"
+			(uuid "db4ad6ee-b8a3-4215-9a14-1fc1c5bfd106")
+		)
+		(pin "6"
+			(uuid "a8a1b137-449a-4c54-bed8-2ea7711ff41b")
+		)
+		(instances
+			(project "MPXDecorder-V4_SMD"
+				(path "/88611961-9974-4de6-9010-330f0c036af9"
+					(reference "U8")
+					(unit 4)
 				)
 			)
 		)
