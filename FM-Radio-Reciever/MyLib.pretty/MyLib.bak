@@ -103,6 +103,30 @@
 			)
 			(polyline
 				(pts
+					(xy 0 2.286) (xy 0 0.762)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 -2.032) (xy 0 -0.762)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
 					(xy 1.27 2.54) (xy -1.27 -2.54)
 				)
 				(stroke
@@ -210,7 +234,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 -3.81 90)
+				(at 0 -5.08 90)
 				(length 3.048)
 				(name ""
 					(effects
@@ -230,7 +254,7 @@
 		)
 		(symbol "ALPS_PolyVaricon_2x30p_1_1"
 			(pin passive line
-				(at 0 3.81 270)
+				(at 0 5.08 270)
 				(length 3.048)
 				(name ""
 					(effects
@@ -250,7 +274,7 @@
 		)
 		(symbol "ALPS_PolyVaricon_2x30p_2_1"
 			(pin passive line
-				(at 0 3.81 270)
+				(at 0 5.08 270)
 				(length 3.048)
 				(name ""
 					(effects
