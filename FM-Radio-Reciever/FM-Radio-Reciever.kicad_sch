@@ -5043,9 +5043,9 @@
 		)
 		(uuid "a6139fbb-d32d-4355-bd8b-f5540ba903d5")
 	)
-	(text "位相シフト\nLT1は中華ボビン(内径 5mm) に17T\nその後コアを調整"
+	(text "位相シフト\nLT1は中華ボビン(Aitendo T7X7KA 内径 5mm)\n に0.21mmを17T\nその後コアを調整"
 		(exclude_from_sim no)
-		(at 88.138 219.964 0)
+		(at 84.836 219.202 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5063,7 +5063,7 @@
 		)
 		(uuid "d4a3ab70-938e-4a94-a3aa-95c15485aef6")
 	)
-	(text "受信周波数：76-95MHz\nバリコン：10p-30p\nL2: 0.6mmを内径5mmで4ターン長さ3.3mm\nL1: 0.6mmを内径5mmで3ターン長さ2.3mm\n\nT2\n27T:9T"
+	(text "受信周波数：76-95MHz\nバリコン：10p-30p\nL2: 0.6mmを内径5mmで4ターン長さ3.3mm\nL1: 0.6mmを内径5mmで3ターン長さ2.3mm\n\nT2\nボビン：Aitendo T7X7KA 巻き数比3:1\n27T:9T (0.21mm)"
 		(exclude_from_sim no)
 		(at 35.814 78.74 0)
 		(effects
@@ -11666,6 +11666,16 @@
 			(justify left bottom)
 		)
 		(uuid "c008a5a0-2c7f-46b2-a9bf-faf46f099f37")
+	)
+	(label "Q_TANK"
+		(at 81.28 231.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c3afb1d2-25fb-4814-9cfa-55e4b982fa47")
 	)
 	(label "S4B"
 		(at 311.15 105.41 0)

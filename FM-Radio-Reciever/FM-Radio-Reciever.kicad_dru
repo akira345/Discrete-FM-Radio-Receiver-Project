@@ -1,0 +1,5 @@
+(version 1)
+
+(rule "Quad tank node: keep pour 0.5mm away"
+   (constraint clearance (min 0.5mm))
+   (condition "(A.NetName == '/Q_TANK' && B.Type == 'Zone') || (B.NetName == '/Q_TANK' && A.Type == 'Zone')"))
