@@ -35256,7 +35256,7 @@
 		(dnp no)
 		(uuid "dbd12e22-188e-4bea-963a-413e41e01796")
 		(property "Reference" "C14"
-			(at 96.52 26.162 0)
+			(at 88.392 32.512 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -35266,8 +35266,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "39p"
-			(at 96.52 27.94 0)
+		(property "Value" "33p"
+			(at 88.646 34.798 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
